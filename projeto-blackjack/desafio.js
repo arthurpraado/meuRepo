@@ -1,6 +1,7 @@
     let cartasUsuario = [comprarCarta(), comprarCarta()]
     let cartasComputador = [comprarCarta(), comprarCarta()]
     let comecaJogo = false
+    
 
    const mostrarCartas = (arrayDeCartas) => {
        return arrayDeCartas.reduce((prev, next) => {
