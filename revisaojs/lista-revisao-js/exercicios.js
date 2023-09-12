@@ -10,7 +10,12 @@ function retornaTamanhoArray(array) {
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-  return array.reverse()
+//   return array.reverse()
+    let arrayInvertido = []
+    for (let i = array.length-1; i >= 0; i--) {
+        arrayInvertido.push(array[i])
+    }
+    return arrayInvertido
 }
 
 // EXERCÍCIO 03
@@ -101,40 +106,93 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+    let arrayOrdenado = retornaArrayOrdenado(array)
+    let segundoMenor = arrayOrdenado[1]
+    let segundoMaior = arrayOrdenado[array.length-2]
+    return [segundoMaior, segundoMenor]
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+   return (`Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`)
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+   return {...pessoa, nome: "ANÔNIMO"}
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+   let novoArray = []
+   for (let i = 0; i < pessoas.length; i++) {
+   const pessoa = pessoas[i]
+   if (pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade < 60) {
+        novoArray.push(pessoa)
+   }
+}
+   return novoArray
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+  let arrayRemover = pessoas.filter((pessoa) => {
+   return pessoa.altura < 1.5 || pessoa.idade <= 14 || pessoa.idade >= 60 
+   })
+   return arrayRemover
 }
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+   for (let c of contas) {
+    let debito = 0
+    for (let item of c.compras) {
+        debito += item
+    }
+    c.saldoTotal -= debito
+    c.compras = []
+   }
+   return contas
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+    const arrayOrdenado = consultas.sort((a, b) => {
+        if (a.nome < b.nome) {
+            return -1
+        }
+        if (a.nome > b.nome) {
+            return 1
+        }
+        return 0
+    })
+    return arrayOrdenado
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+    const arrayOrdenado = consultas.sort((a, b) => {
+        const dA = a.dataDaConsulta
+        const dataA = new Date (
+            dA.substring(6, 10),
+            dA.substring(3, 5) - 1,
+            dA.substring(0, 2)
+        )
+
+        const db = b.dataDaConsulta
+        const dataB = new Date (
+            db.substring(6, 10),
+            db.substring(3,5) -1,
+            db.substring(0, 2)
+        )
+
+        if (dataA > dataB) {
+            return 1
+        }
+        if (dataA < dataB) {
+            return -1
+        }
+        return 0
+    })
+    return arrayOrdenado
 }
