@@ -31,10 +31,23 @@ function retornaNumerosPares(array) {
 //    })
 //    return numerosPares
     let numerosPares = []
-    for (let i = 0; i < array.length; i++) {
+    // for (let i = 0; i < array.length; i++) {
+    //     if (array[i] % 2 === 0) {
+    //         numerosPares.push(array[i])
+    //     }
+    // }
+
+    // for (let pares of array) {
+    //     if (pares % 2 === 0) {
+    //         numerosPares.push(pares)
+    //     }
+    // }
+    let i = 0
+    while (i < array.length) {
         if (array[i] % 2 === 0) {
             numerosPares.push(array[i])
         }
+        i++
     }
     return numerosPares
 }
