@@ -1,0 +1,23 @@
+#imgBlackJack{
+    width: 300px;
+    margin: 20px auto;
+}
+
+.divPrincipalProj{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 100px;
+}
+
+#titulosProjetos {
+    text-decoration: none;
+    color: darkgoldenrod;
+}
+
+#imgBlackJack:hover {
+    cursor:pointer;
+}
+
+#imgBlackJack:active {
+    width:max-content;
+}
