@@ -18,27 +18,33 @@ header {
 
 header > a{
     text-decoration: none;
-    color: darkgoldenrod;
+    color: rgb(30, 4, 115);
    
     font-size: 20px;
 }
 
 header > a:hover {
     text-decoration: underline;
-    color: darkgoldenrod;
+    color: rgba(162, 11, 196, 0.687);
+}
+
+.divHeader {
+    background-color:#5087BF;
 }
 
 #logoCabecalho {
-    border: solid burlywood;
+    border: solid rgb(30, 4, 115);
     border-radius: 50%;
     font-size: large;
     padding: 5px;
     margin-top: auto;
     text-decoration: none;
-    color:darkgoldenrod
+    color:rgb(30, 4, 115)
 }
 #logoCabecalho:hover{
     text-decoration: underline;
+    color: rgba(162, 11, 196, 0.687);
+    border: solid rgba(162, 11, 196, 0.687);
 }
 
 .divPrincipal {
@@ -70,7 +76,7 @@ div>span{
 
 .divSecundaria {
     height: 700px;
-    background-color: darkgoldenrod; 
+    background-color: #F9B064; 
     font-style:italic;
 }
 
