@@ -20,8 +20,12 @@ header > input {
     text-align: flex-start;
 }
 
-header > h3{
+header > a > h3{
     margin: 35px 10px;
+}
+
+a {
+    text-decoration: none;
 }
 
 .cardVideo{
@@ -29,14 +33,46 @@ header > h3{
     flex-direction: column;
     text-align: center;
     box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
-    padding: 20px;
     margin: 10px;
-    width: 15%;
-    height: 250px;
+    width: 20%;
+    height: 200px;
     border-color: green;
 }
 
 .divPrincipal {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 50px
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background-color: #323B3E;
+    color: white;
+    bottom: 0;
+    position: fixed;
+    min-width: 100vw;
+    align-items: center;
+   
+}
+
+a > img {
+    height: 150px;
+    width: 100%;
+}
+
+div > h3 {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    width: 65vw;
+    display: flex;
+    margin: auto;
 }
