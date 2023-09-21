@@ -76,3 +76,41 @@ video {
     display: flex;
     margin: auto;
 }
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    footer h2 {
+        display: flex;
+        margin-top: 1vw;
+        max-height: 1vw;
+        font-size: large;
+        text-align: center;
+        align-items: center;
+    }
+    .cardVideo{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+        margin: 10px;
+        width: 50px;
+        border-color: green;
+    }
+}
+    
+@media screen and (min-device-width : 481px) and (max-device-width : 800px) {
+    footer {
+        margin-top: 1vh;
+        min-height: 7vh;
+    }
+    .cardVideo{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+        margin: 10px;
+        width: 50px;
+        height: 50px;
+        border-color: green;
+    }
+}
+        
