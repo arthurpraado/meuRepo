@@ -1,0 +1,14 @@
+.smallcard-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    width: 385px;
+    padding: 10px;
+}
+
+
+.smallcard-container p {
+    margin-bottom: 15px;
+}
+
