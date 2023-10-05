@@ -39,17 +39,35 @@ const UserPhoto = styled.img`
 const PostPhoto = styled.img`
   width: 100%;
 `
+const ComentarioContainer = styled.div`
+  border: 1px solid gray;
+  margin: 5px;
+  border-left-width: thick;
+  border-radius: 5px;
+
+  p {
+    margin: 2px;
+  }
+`;
 
 class Post extends React.Component {
   state = {
     curtido: false,
     numeroCurtidas: 0,
     comentando: false,
-    numeroComentarios: 0
+    numeroComentarios: 0,
+    comentarios: []
   }
 
   onClickCurtida = () => {
-    console.log('Curtiu!')
+    this.setState({
+      curtido: !this.state.curtido,
+    })
+    if (!this.state.curtido) {
+      this.setState({numeroCurtidas: this.state.numeroCurtidas + 1})
+    } else {
+      this.setState({numeroCurtidas: this.state.numeroCurtidas - 1})
+    }
   }
 
   onClickComentario = () => {
@@ -58,10 +76,11 @@ class Post extends React.Component {
     })
   }
 
-  aoEnviarComentario = () => {
+  aoEnviarComentario = (comentario) => {
     this.setState({
       comentando: false,
-      numeroComentarios: this.state.numeroComentarios + 1
+      numeroComentarios: this.state.numeroComentarios + 1,
+      comentarios: [comentario, ...this.state.comentarios]
     })
   }
 
@@ -79,6 +98,14 @@ class Post extends React.Component {
     if(this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
+
+    let comentariosPosts = this.state.comentarios.map((comentario) => {
+      return(
+        <ComentarioContainer>
+          <p> {comentario} </p>
+        </ComentarioContainer>
+      )
+    })
 
     return <PostContainer>
       <PostHeader>
@@ -102,6 +129,7 @@ class Post extends React.Component {
         />
       </PostFooter>
       {componenteComentario}
+      {comentariosPosts}
     </PostContainer>
   }
 }
